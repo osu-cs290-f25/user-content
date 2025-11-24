@@ -1,0 +1,21 @@
+{
+  "name": "user-content",
+  "version": "1.0.0",
+  "description": "Asynchronous Client-Server Communication and User-Generated Content",
+  "author": "Hess <hessro@oregonstate.edu>",
+  "license": "MIT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "node compiler.js views/partials/photoCard.ejs static/photoCardTemplate.js",
+    "prestart": "cp node_modules/ejs/ejs.min.js static/ && npm run build"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
