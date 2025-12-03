@@ -21,12 +21,30 @@ function handleModalAcceptClick() {
     alert("You must fill in all of the fields!")
   } else {
 
-    var photoCardHtml = window.templates.photoCard({
-      url: photoURL,
-      caption: caption
+    var reqUrl = "addPhoto"
+    fetch(reqUrl, {
+      method: "POST",
+      body: JSON.stringify({
+        url: photoURL,
+        caption: caption
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(function (res) {
+      if (res.status === 200) {
+        var photoCardHtml = window.templates.photoCard({
+          url: photoURL,
+          caption: caption
+        })
+        var photoCardContainer = document.querySelector('.photo-card-container')
+        photoCardContainer.insertAdjacentHTML('beforeend', photoCardHtml)
+      } else {
+        alert("An error occurred saving the photo")
+      }
+    }).catch(function (err) {
+      alert("An error occurred saving the photo")
     })
-    var photoCardContainer = document.querySelector('.photo-card-container')
-    photoCardContainer.insertAdjacentHTML('beforeend', photoCardHtml)
 
     hideModal()
 

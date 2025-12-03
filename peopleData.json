@@ -38,8 +38,29 @@
       {
         "url": "https://picsum.photos/512",
         "caption": "Caption from Insomnia #3"
+      },
+      {
+        "url": "https://picsum.photos/512",
+        "caption": "Client-side caption"
+      },
+      {
+        "url": "https://picsum.photos/512",
+        "caption": "Client-side caption #2"
+      },
+      {
+        "url": "https://picsum.photos/512",
+        "caption": "Client-side caption #3"
+      },
+      {
+        "url": "https://picsum.photos/512",
+        "caption": "Client-side caption #4"
+      },
+      {
+        "url": "https://picsum.photos/512",
+        "caption": "Testing"
       }
-    ]
+    ],
+    "_locals": {}
   },
   "rey": {
     "name": "Rey",
